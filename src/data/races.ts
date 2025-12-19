@@ -1,0 +1,123 @@
+export default [
+  {
+    name: "Humanos",
+    description:
+      "Versáteis e adaptáveis, dominam diversas áreas com facilidade.",
+    abilities: {
+      level1: "Aprendizado Rápido: ganha +1 em qualquer atributo",
+      level5: "Versatilidade: pode repetir uma habilidade por turno",
+      level10: "Espírito Inabalável: resistência a medo e controle mental",
+    },
+    advantage: "Flexibilidade em builds",
+    disadvantage: "Nenhum bônus especializado",
+    height: { min: 1.6, max: 1.9 },
+  },
+  {
+    name: "Elfos",
+    description: "Seres longevos com forte ligação à magia e à natureza.",
+    abilities: {
+      level1: "Visão Noturna",
+      level5: "Afinidade Mágica: custo reduzido de magia",
+      level10: "Passos Etéreos: chance de evitar ataques",
+    },
+    advantage: "Alta agilidade e magia",
+    disadvantage: "Baixa resistência física",
+    height: { min: 1.7, max: 2.1 },
+  },
+  {
+    name: "Anões",
+    description: "Robustos e especialistas em defesa e forja.",
+    abilities: {
+      level1: "Pele de Pedra: +defesa",
+      level5: "Resistência Ancestral: redução de dano físico",
+      level10: "Muralha Viva: chance de anular dano",
+    },
+    advantage: "Alta durabilidade",
+    disadvantage: "Baixa mobilidade",
+    height: { min: 1.3, max: 1.5 },
+  },
+  {
+    name: "Orcs",
+    description: "Guerreiros brutais focados em força e combate direto.",
+    abilities: {
+      level1: "Fúria: bônus de dano",
+      level5: "Sede de Guerra: cura ao derrotar inimigos",
+      level10: "Fúria Imortal: ignora morte uma vez",
+    },
+    advantage: "Dano elevado",
+    disadvantage: "Baixa inteligência",
+    height: { min: 1.9, max: 2.4 },
+  },
+  {
+    name: "Goblins",
+    description: "Criaturas pequenas, rápidas e traiçoeiras.",
+    abilities: {
+      level1: "Furtividade Natural",
+      level5: "Ataque Oportunista: dano extra pelas costas",
+      level10: "Evasão Total: chance alta de esquiva",
+    },
+    advantage: "Alta agilidade",
+    disadvantage: "Baixa vida",
+    height: { min: 1.1, max: 1.3 },
+  },
+  {
+    name: "Tieflings",
+    description: "Marcados por sangue demoníaco e magia sombria.",
+    abilities: {
+      level1: "Resistência ao Fogo",
+      level5: "Magia Infernal",
+      level10: "Forma Demoníaca Temporária",
+    },
+    advantage: "Magia ofensiva forte",
+    disadvantage: "Rejeição social",
+    height: { min: 1.6, max: 1.9 },
+  },
+  {
+    name: "Draconianos",
+    description: "Descendentes de dragões com poder elemental.",
+    abilities: {
+      level1: "Resistência Elemental",
+      level5: "Sopro Dracônico",
+      level10: "Escamas Ancestrais: defesa massiva",
+    },
+    advantage: "Equilíbrio entre ataque e defesa",
+    disadvantage: "Habilidades com recarga longa",
+    height: { min: 1.8, max: 2.3 },
+  },
+  {
+    name: "Feralinos",
+    description: "Humanoides com traços animais e sentidos aguçados.",
+    abilities: {
+      level1: "Sentidos Aprimorados",
+      level5: "Instinto Predador: bônus crítico",
+      level10: "Forma Bestial",
+    },
+    advantage: "Percepção elevada",
+    disadvantage: "Difícil controle emocional",
+    height: { min: 1.5, max: 2.0 },
+  },
+  {
+    name: "Nefelins",
+    description: "Seres tocados pela luz celestial.",
+    abilities: {
+      level1: "Aura de Luz: bônus a aliados",
+      level5: "Cura Divina",
+      level10: "Asas Celestiais",
+    },
+    advantage: "Suporte poderoso",
+    disadvantage: "Baixo dano bruto",
+    height: { min: 1.7, max: 2.1 },
+  },
+  {
+    name: "Sombríneos",
+    description: "Habitantes das sombras e do plano obscuro.",
+    abilities: {
+      level1: "Camuflagem Sombria",
+      level5: "Ilusão Sombria",
+      level10: "Fusão com as Sombras",
+    },
+    advantage: "Excelente furtividade",
+    disadvantage: "Fraqueza à luz",
+    height: { min: 1.6, max: 2.0 },
+  },
+]
