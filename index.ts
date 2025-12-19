@@ -1,1 +1,2 @@
-console.log("Hello world")
+import app from "./src/app"
+app()
