@@ -1,2 +1,2 @@
-import app from "./src/app"
-app()
+import menu from "./src/app"
+menu()

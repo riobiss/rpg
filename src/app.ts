@@ -1,10 +1,6 @@
-import { createInterface } from "readline"
-const rl = createInterface({
-  input: process.stdin,
-  output: process.stdout,
-})
-
-function app() {
+import rl from "./utils/readline"
+import confirmExit from "./utils/confirmExit"
+function menu() {
   console.clear()
   console.log(`Boas vindas ao meu RPG\n`)
 
@@ -18,13 +14,19 @@ function app() {
         console.clear()
         console.log("Opção invalida")
         setTimeout(() => {
-          app()
+          menu()
         }, 1000)
       }
       if (answer === "1") {
         console.log("Criando personagem")
       }
+      if (answer === "2") {
+        console.log("historia")
+      }
+      if (answer === "3") {
+        confirmExit(menu)
+      }
     })
   }, 2000)
 }
-export default app
+export default menu
