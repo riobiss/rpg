@@ -1,6 +1,6 @@
 export default [
   {
-    name: "Humanos",
+    name: "Humano",
     description:
       "Versáteis e adaptáveis, dominam diversas áreas com facilidade.",
     abilities: {
@@ -13,7 +13,7 @@ export default [
     height: { min: 1.6, max: 1.9 },
   },
   {
-    name: "Elfos",
+    name: "Elfo",
     description: "Seres longevos com forte ligação à magia e à natureza.",
     abilities: {
       level1: "Visão Noturna",
@@ -25,7 +25,7 @@ export default [
     height: { min: 1.7, max: 2.1 },
   },
   {
-    name: "Anões",
+    name: "Anão",
     description: "Robustos e especialistas em defesa e forja.",
     abilities: {
       level1: "Pele de Pedra: +defesa",
@@ -37,7 +37,7 @@ export default [
     height: { min: 1.3, max: 1.5 },
   },
   {
-    name: "Orcs",
+    name: "Orc",
     description: "Guerreiros brutais focados em força e combate direto.",
     abilities: {
       level1: "Fúria: bônus de dano",
@@ -49,7 +49,7 @@ export default [
     height: { min: 1.9, max: 2.4 },
   },
   {
-    name: "Goblins",
+    name: "Goblin",
     description: "Criaturas pequenas, rápidas e traiçoeiras.",
     abilities: {
       level1: "Furtividade Natural",
@@ -61,7 +61,7 @@ export default [
     height: { min: 1.1, max: 1.3 },
   },
   {
-    name: "Tieflings",
+    name: "Tiefling",
     description: "Marcados por sangue demoníaco e magia sombria.",
     abilities: {
       level1: "Resistência ao Fogo",
@@ -73,7 +73,7 @@ export default [
     height: { min: 1.6, max: 1.9 },
   },
   {
-    name: "Draconianos",
+    name: "Draconiano",
     description: "Descendentes de dragões com poder elemental.",
     abilities: {
       level1: "Resistência Elemental",
@@ -85,7 +85,7 @@ export default [
     height: { min: 1.8, max: 2.3 },
   },
   {
-    name: "Feralinos",
+    name: "Feralino",
     description: "Humanoides com traços animais e sentidos aguçados.",
     abilities: {
       level1: "Sentidos Aprimorados",
@@ -97,7 +97,7 @@ export default [
     height: { min: 1.5, max: 2.0 },
   },
   {
-    name: "Nefelins",
+    name: "Nefelin",
     description: "Seres tocados pela luz celestial.",
     abilities: {
       level1: "Aura de Luz: bônus a aliados",
@@ -109,7 +109,7 @@ export default [
     height: { min: 1.7, max: 2.1 },
   },
   {
-    name: "Sombríneos",
+    name: "Sombríneo",
     description: "Habitantes das sombras e do plano obscuro.",
     abilities: {
       level1: "Camuflagem Sombria",

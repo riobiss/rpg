@@ -1,9 +1,10 @@
 import rl from "./utils/readline"
 import confirmExit from "./utils/confirmExit"
+import CreateCharacter from "./CreateCharacter"
 function menu() {
+  const createCharacter = new CreateCharacter()
   console.clear()
   console.log(`Boas vindas ao meu RPG\n`)
-
   setTimeout(() => {
     console.log("1 - Criar personagem")
     console.log("2 - Ver status")
@@ -18,7 +19,7 @@ function menu() {
         }, 1000)
       }
       if (answer === "1") {
-        console.log("Criando personagem")
+        createCharacter.setRaces()
       }
       if (answer === "2") {
         console.log("historia")
@@ -27,6 +28,6 @@ function menu() {
         confirmExit(menu)
       }
     })
-  }, 2000)
+  }, 1000)
 }
 export default menu
