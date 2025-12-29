@@ -10,8 +10,10 @@
     "moduleResolution": "nodenext",
     // "esModuleInterop": true,
     "target": "es2022",
+
     // Recommended
     "types": [],
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "strict": true
   }
 }
