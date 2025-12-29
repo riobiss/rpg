@@ -1,10 +1,11 @@
-import rl from "./utils/readline"
-import confirmExit from "./utils/confirmExit"
-import CreateCharacter from "./CreateCharacter"
-function menu() {
-  const createCharacter = new CreateCharacter()
+import rl from "./utils/readline.js"
+import confirmExit from "./utils/confirmExit.js"
+import createCharacter from "./CreateCharacter.js"
+import chalk from "chalk"
+
+function app() {
   console.clear()
-  console.log(`Boas vindas ao meu RPG\n`)
+  console.log(`Boas vindas ao ${chalk.blue(`Shell RPG`)}\n`)
   setTimeout(() => {
     console.log("1 - Criar personagem")
     console.log("2 - Ver status")
@@ -15,19 +16,19 @@ function menu() {
         console.clear()
         console.log("Opção invalida")
         setTimeout(() => {
-          menu()
+          app()
         }, 1000)
       }
       if (answer === "1") {
-        createCharacter.setRaces()
+        createCharacter()
       }
       if (answer === "2") {
         console.log("historia")
       }
       if (answer === "3") {
-        confirmExit(menu)
+        confirmExit(app)
       }
     })
   }, 1000)
 }
-export default menu
+export default app
