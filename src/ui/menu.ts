@@ -1,10 +1,10 @@
-import rl from "./utils/readline.js"
-import confirmExit from "./utils/confirmExit.js"
-import createCharacter from "./CreateCharacter.js"
+import rl from "../utils/readline.js"
+import confirmExit from "../utils/confirmExit.js"
+import createCharacter from "../CreateCharacter.js"
 import chalk from "chalk"
-import combat from "./combat/combat.js"
+import combat from "../game/combat.js"
 
-function app() {
+function menu() {
   console.clear()
   console.log(`Boas vindas ao ${chalk.blue(`Shell RPG`)}\n`)
   setTimeout(() => {
@@ -17,7 +17,7 @@ function app() {
         console.clear()
         console.log("Opção invalida")
         setTimeout(() => {
-          app()
+          menu()
         }, 1000)
       }
       if (answer === "1") {
@@ -30,9 +30,9 @@ function app() {
         console.log("historia")
       }
       if (answer === "4") {
-        confirmExit(app)
+        confirmExit(menu)
       }
     })
   }, 1000)
 }
-export default app
+export default menu

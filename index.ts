@@ -1,2 +1,2 @@
-import menu from "./src/app.js"
+import menu from "./src/ui/menu.js"
 menu()
