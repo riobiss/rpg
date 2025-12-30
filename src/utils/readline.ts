@@ -1,7 +1,6 @@
-import { createInterface } from "readline"
+import readline from "node:readline/promises"
+import { stdin as input, stdout as output } from "node:process"
 
-const rl = createInterface({
-  input: process.stdin,
-  output: process.stdout,
-})
+const rl = readline.createInterface({ input, output })
+
 export default rl
