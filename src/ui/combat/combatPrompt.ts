@@ -7,7 +7,7 @@ export default async function chooseCombatants() {
   console.clear()
   console.log("Combatentes")
   player.forEach((player, index) => {
-    return console.log(`${chalk.blue(index + 1)} - ${player.name}`)
+    return console.log(`${chalk.yellow(index + 1)} - ${player.name}`)
   })
   const answerAttacker = Number(await rl.question("\nQuem vai atacar: "))
   const attacker = player[answerAttacker - 1]
@@ -17,7 +17,7 @@ export default async function chooseCombatants() {
   )
   console.log("\nAlvo: ")
   enemy.forEach((enemy, index) => {
-    return console.log(`${index + 1} - ${enemy.name}`)
+    return console.log(`${chalk.yellow(index + 1)} - ${enemy.name}`)
   })
   const answerTarget = Number(await rl.question("> "))
   const target = enemy[answerTarget - 1]
