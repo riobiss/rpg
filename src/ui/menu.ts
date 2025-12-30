@@ -2,7 +2,7 @@ import rl from "../utils/readline.js"
 import confirmExit from "../utils/confirmExit.js"
 import createCharacter from "../CreateCharacter.js"
 import chalk from "chalk"
-import combat from "../game/combat.js"
+import combat from "./combat/combatPrompt.js"
 
 function menu() {
   console.clear()

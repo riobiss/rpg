@@ -1,10 +1,9 @@
-import dice from "./dice/dice.js"
-import player from "../entities/player.js"
-import enemy from "../entities/enemy.js"
-import rl from "../utils/readline.js"
+import player from "../../entities/player.js"
+import enemy from "../../entities/enemy.js"
+import rl from "../../utils/readline.js"
 import chalk from "chalk"
 
-export default function combat() {
+export default function chooseCombatants() {
   console.clear()
   console.log("Combatentes")
   player.forEach((player, index) => {
@@ -26,6 +25,7 @@ export default function combat() {
       console.log(
         `Alvo - ${target.name}\nVida - ${target.health}\nDano - ${target.damage}\nDefesa - ${target.defense}`
       )
+      return { attacker, target }
     })
   })
 }
