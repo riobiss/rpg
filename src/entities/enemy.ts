@@ -11,4 +11,10 @@ export default [
     health: 100,
     defense: 10,
   },
+  {
+    name: "Golem",
+    damage: 18,
+    health: 80,
+    defense: 15,
+  },
 ]

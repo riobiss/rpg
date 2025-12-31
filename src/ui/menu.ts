@@ -2,7 +2,7 @@ import rl from "../utils/readline"
 import confirmExit from "../utils/confirmExit"
 import createCharacter from "./createCharacter"
 import chalk from "chalk"
-import combat from "./combat/combatPrompt"
+import combat from "../services/combat"
 
 export default async function menu() {
   process.stdout.write("\x1Bc")
