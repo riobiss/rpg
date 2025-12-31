@@ -3,7 +3,6 @@ import enemy from "../../entities/enemy"
 import rl from "../../utils/readline"
 import chalk from "chalk"
 import type { Player } from "../../types/playerType"
-import fight from "../fight"
 
 export default async function chooseCombatants(): Promise<{
   attacker: Player
