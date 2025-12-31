@@ -1,6 +1,6 @@
 import chalk from "chalk"
-import races from "../data/races.js"
-import rl from "../utils/readline.js"
+import races from "../data/races"
+import rl from "../utils/readline"
 
 export default async function createCharacter() {
   console.clear()

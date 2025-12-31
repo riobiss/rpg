@@ -1,4 +1,4 @@
-import rl from "./readline.js"
+import rl from "./readline"
 import chalk from "chalk"
 
 export default async function confirmExit() {
