@@ -26,7 +26,7 @@ export default async function chooseCombatants(): Promise<{
   const answerTarget = Number(await rl.question("> "))
   const target = enemy[answerTarget - 1]
   console.log(
-    `Alvo - ${target.name}\nVida - ${target.health}\nDano - ${target.damage}\nDefesa - ${target.defense}`
+    `\nAlvo - ${target.name}\nVida - ${target.health}\nDano - ${target.damage}\nDefesa - ${target.defense}`
   )
   return { attacker, target }
 }

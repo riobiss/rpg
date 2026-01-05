@@ -1,14 +1,27 @@
-import type { Player } from "../types/playerType"
-import type { Enemy } from "../types/enemyType"
-export default function applyDamage(attacker: Player, target: Enemy) {
+import type { Combatants } from "../types/CombatantsType"
+import dice from "../game/dice/dice"
+
+export default async function applyDamage([attacker, target]: Combatants) {
   const { damage } = attacker
   const { health, defense } = target
-  const attack = defense - damage
-  console.log(attack)
+
+  const roll = 20//dice(20)
+
+  let finalDamage = damage
+
+  if (roll < 14) {
+    return (finalDamage = 0)
+  }
+
+  if (roll >= 20) {
+    finalDamage *= 2
+  }
+
+  const attack = defense - finalDamage
   if (attack >= 1) {
     return 0
   }
+
   const newHealth = health - -attack
-  console.log(newHealth)
-  return newHealth
+  return [{ ...target, health: newHealth }, { roll }]
 }

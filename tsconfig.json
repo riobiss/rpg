@@ -14,6 +14,13 @@
     // Recommended
     "types": ["node"],
     "verbatimModuleSyntax": true,
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true,
+    // Consult your bundler’s documentation
+    "customConditions": ["module"],
+    // Recommended
+    "noEmit": true, // or `emitDeclarationOnly`
+    "allowImportingTsExtensions": true,
+    "allowArbitraryExtensions": true
   }
 }

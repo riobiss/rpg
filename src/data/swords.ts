@@ -1,7 +1,7 @@
 export default [
   {
     name: "Espada do Cavaleiro de Ferro",
-    arma: "Espada longa",
+    arma: "espada-longa",
     dano: "1d20 + 1d10",
     efeito: "Cortante",
     propriedade: "uma mão, versátil (1d12), crítico 10%",
@@ -11,7 +11,7 @@ export default [
   },
   {
     name: "Espada Longa Real",
-    arma: "Espada pesada",
+    arma: "espada-pesada",
     dano: "2d12",
     efeito: "Cortante",
     propriedade: "duas mãos, pesada, crítico 15%",
@@ -21,7 +21,7 @@ export default [
   },
   {
     name: "Espada Sombria",
-    arma: "Espada curta",
+    arma: "espada-curta",
     dano: "1d18 + 1d8",
     efeito: "Cortante",
     propriedade: "leve, uma mão, furtiva, crítico 20%",
@@ -31,7 +31,7 @@ export default [
   },
   {
     name: "Espada do Templário",
-    arma: "Espada versátil",
+    arma: "espada-versátil",
     dano: "1d22",
     efeito: "Cortante",
     propriedade: "uma mão, versátil (1d16), crítico 12%",
@@ -41,7 +41,7 @@ export default [
   },
   {
     name: "Espada Dracônica",
-    arma: "Espada pesada de duas mãos",
+    arma: "espada-pesada-de-duas-mãos",
     dano: "2d10 + 1d12",
     efeito: "Cortante",
     propriedade: "duas mãos, pesada, crítico 18%",
