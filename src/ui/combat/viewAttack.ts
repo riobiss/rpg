@@ -1,4 +1,5 @@
-type Attack = {}
-export default async function attackView(attack: Attack) {
-  console.log(attack)
+import type { DamageResult } from "../../types/combatData";
+
+export default async function viewAttack(attack: DamageResult) {
+console.log(attack)
 }

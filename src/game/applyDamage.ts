@@ -1,27 +1,37 @@
 import type { Combatants } from "../types/CombatantsType"
 import dice from "../game/dice/dice"
+import type { DamageResult } from "../types/combatData"
 
-export default async function applyDamage([attacker, target]: Combatants) {
-  const { damage } = attacker
-  const { health, defense } = target
+export default async function applyDamage([
+  attacker,
+  target,
+]: Combatants): Promise<DamageResult> {
+  const roll = dice(20)
 
-  const roll = 20//dice(20)
-
-  let finalDamage = damage
+  let damage = attacker.damage
 
   if (roll < 14) {
-    return (finalDamage = 0)
+    return {
+      target,
+      roll,
+      damage: 0,
+    }
   }
 
   if (roll >= 20) {
-    finalDamage *= 2
+    damage *= 2
   }
 
-  const attack = defense - finalDamage
-  if (attack >= 1) {
-    return 0
-  }
+  const effectiveDamage = Math.max(damage - target.defense, 0)
 
-  const newHealth = health - -attack
-  return [{ ...target, health: newHealth }, { roll }]
+  const newHealth = target.health - effectiveDamage
+
+  return {
+    target: {
+      ...target,
+      health: newHealth,
+    },
+    roll,
+    damage: effectiveDamage,
+  }
 }
