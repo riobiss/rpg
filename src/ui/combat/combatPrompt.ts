@@ -2,11 +2,11 @@ import player from "../../entities/player"
 import enemy from "../../entities/enemy"
 import rl from "../../utils/readline"
 import chalk from "chalk"
-import type { Player } from "../../types/playerType"
+import type { Character } from "../../types/Character"
 
 export default async function chooseCombatants(): Promise<{
-  attacker: Player
-  target: Player
+  attacker: Character
+  target: Character
 }> {
   console.clear()
   console.log("Combatentes")
@@ -19,6 +19,7 @@ export default async function chooseCombatants(): Promise<{
   console.log(
     `Atacante - ${name}\nVida - ${health}\nDano - ${damage}\nDefesa - ${defense}`
   )
+
   console.log("\nAlvo: ")
   enemy.forEach((enemy, index) => {
     console.log(`${chalk.yellow(index + 1)} - ${enemy.name}`)

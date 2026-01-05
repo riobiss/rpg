@@ -1,6 +1,9 @@
-import type { Combatants } from "./CombatantsType"
+import type { Character } from "./Character"
+
 export type DamageResult = {
-  target: Combatants[1]
+  target: Character
   roll: number
   damage: number
+  rollAttack: number
+
 }

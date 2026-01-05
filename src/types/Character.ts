@@ -1,4 +1,4 @@
-export type Player = {
+export type Character = {
   name: string
   health: number
   damage: number
