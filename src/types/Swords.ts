@@ -2,7 +2,7 @@ export type Swords = {
   name: string
   weaponType: string
   damage: {
-    base: [{ rolls: number; sides: number; type: string }]
+    base: { rolls: number; sides: number; type: string }[]
   }
   properties: {
     hand: string

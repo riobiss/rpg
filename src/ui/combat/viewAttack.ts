@@ -9,7 +9,6 @@ export default async function viewAttack(attackResult: DamageResult) {
   console.log(`Dado do ataque: ${rollAttack}`)
   console.log(`Dano causado: ${damage}`)
   console.log(`Vida atual: ${target.health}`)
-
   const answer = Number(await rl.question("Quer atacar de novo? (1 = sim) "))
   return answer
 }

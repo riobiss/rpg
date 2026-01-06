@@ -2,7 +2,7 @@ import rl from "../utils/readline"
 import confirmExit from "../utils/confirmExit"
 import createCharacter from "./createCharacter"
 import chalk from "chalk"
-import combat from "../controller/combatController"
+import selectWeapon from "./combat/selectWeapon"
 
 export default async function menu() {
   process.stdout.write("\x1Bc")
@@ -17,7 +17,7 @@ export default async function menu() {
     await createCharacter()
   }
   if (answer === "2") {
-    await combat()
+    await selectWeapon()
   }
   if (answer === "3") {
     console.log("historia")

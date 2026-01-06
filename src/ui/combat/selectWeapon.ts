@@ -1,20 +1,19 @@
+import combatController from "../../controller/combatController"
+import type { Combatants } from "../../types/Combatants"
 import rl from "../../utils/readline"
 import chooseCombatants from "./chooseCombatants"
 
 export default async function selectWeapon() {
-  const {
-    attacker: {
-      backpack: { swords },
-    },
-  } = await chooseCombatants()
+  const combatants: Combatants = await chooseCombatants()
+  const { attacker } = combatants
   console.log(`\nCom qual arma vai atacar?`)
-
-  swords.forEach((swords, index) => {
+  console.log("\n1 - Mão")
+  attacker.backpack?.swords.forEach((swords, index) => {
     const damage = swords.damage.base.map((dmg) => {
       return ` ${dmg.rolls}d${dmg.sides} ${dmg.type}`
     })
     console.log(
-      `\n${index + 1} - ${swords.name}
+      `\n${index + 2} - ${swords.name}
       Dano:${damage}
       Tipo: ${swords.weaponType}
       Propriedades: Mão ${swords.properties.hand}, Versatilidade ${
@@ -28,5 +27,8 @@ export default async function selectWeapon() {
       `
     )
   })
-  const answer = await rl.question("> ")
+  const answer = Number(await rl.question("> "))
+  if (answer === 1) {
+    combatController(combatants)
+  }
 }

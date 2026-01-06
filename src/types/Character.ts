@@ -8,7 +8,7 @@ export type Character = {
     sides: number
   }
   defense: number
-  backpack: {
+  backpack?: {
     swords: Swords[]
   }
 }
