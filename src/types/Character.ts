@@ -1,8 +1,14 @@
-import type { DiceRoll } from "./DiceRoll"
+import type { Swords } from "./Swords"
 
 export type Character = {
   name: string
   health: number
-  damage: DiceRoll
+  damage: {
+    rolls: number
+    sides: number
+  }
   defense: number
+  backpack: {
+    swords: Swords[]
+  }
 }

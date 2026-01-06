@@ -1,10 +1,12 @@
 import applyDamage from "../game/applyDamage"
-import chooseCombatants from "../ui/combat/combatPrompt"
+import chooseCombatants from "../ui/combat/chooseCombatants"
 import type { Combatants } from "../types/Combatants"
 import viewAttack from "../ui/combat/viewAttack"
+import selectWeapon from "../ui/combat/selectWeapon"
 
 export default async function combatController() {
-  const state: Combatants = await chooseCombatants()
+  selectWeapon()
+/*   const state: Combatants = await chooseCombatants()
   while (true) {
     const combatants: Combatants = {
       attacker: state.attacker,
@@ -16,5 +18,5 @@ export default async function combatController() {
     const continueAttack = await viewAttack(attackResult)
     
     if (continueAttack !== 1) break
-  }
+  } */
 }

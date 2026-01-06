@@ -21,7 +21,7 @@ export default [
     },
     defense: 3,
     backpack: {
-      swords: [swords[2]],
+      swords: [swords[2], swords[3]],
     },
   },
   {
