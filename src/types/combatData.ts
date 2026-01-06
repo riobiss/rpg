@@ -5,5 +5,4 @@ export type DamageResult = {
   roll: number
   damage: number
   rollAttack: number
-
 }

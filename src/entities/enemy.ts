@@ -1,19 +1,19 @@
 export default [
   {
     name: "Goblin",
-    damage: 12,
+    damage: { rolls: 1, sides: 12 },
     health: 40,
     defense: 4,
   },
   {
     name: "Ogro",
-    damage: 18,
+    damage: { rolls: 1, sides: 18 },
     health: 100,
     defense: 10,
   },
   {
     name: "Golem",
-    damage: 18,
+    damage: { rolls: 1, sides: 14 },
     health: 80,
     defense: 15,
   },

@@ -15,9 +15,14 @@ export default async function chooseCombatants(): Promise<{
   })
   const answerAttacker = Number(await rl.question("\nQuem vai atacar: "))
   const attacker = player[answerAttacker - 1]
-  const { name, health, damage, defense } = attacker
+  const {
+    name: nameAttacker,
+    health: healthAttacker,
+    damage: damageAttacker,
+    defense: defenseAttacker,
+  } = attacker
   console.log(
-    `Atacante - ${name}\nVida - ${health}\nDano - ${damage}\nDefesa - ${defense}`
+    `Atacante - ${nameAttacker}\nVida - ${healthAttacker}\nDano - ${damageAttacker.rolls}d${damageAttacker.sides}\nDefesa - ${defenseAttacker}`
   )
 
   console.log("\nAlvo: ")
@@ -26,8 +31,14 @@ export default async function chooseCombatants(): Promise<{
   })
   const answerTarget = Number(await rl.question("> "))
   const target = enemy[answerTarget - 1]
+  const {
+    name: nameTarget,
+    health: healthTarget,
+    damage: damageTarget,
+    defense: defenseTarget,
+  } = target
   console.log(
-    `\nAlvo - ${target.name}\nVida - ${target.health}\nDano - ${target.damage}\nDefesa - ${target.defense}`
+    `\nAlvo - ${nameTarget}\nVida - ${healthTarget}\nDano - ${damageTarget.rolls}d${damageTarget.sides}\nDefesa - ${defenseTarget}`
   )
   return { attacker, target }
 }

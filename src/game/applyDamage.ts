@@ -5,7 +5,7 @@ import type { DamageResult } from "../types/combatData"
 export default async function applyDamage(
   combatants: Combatants
 ): Promise<DamageResult> {
-  const roll = dice(20)
+  const roll = dice({ rolls: 1, sides: 20 })
 
   const { attacker, target } = combatants
 
@@ -20,7 +20,7 @@ export default async function applyDamage(
     }
   }
 
-  if (roll >= 20) {
+  if (roll === 20) {
     rollAttack *= 2
   }
 
