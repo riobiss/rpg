@@ -1,6 +1,6 @@
-import type { Combatants } from "../types/Combatants"
-import dice from "../game/dice/dice"
-import type { DamageResult } from "../types/combatData"
+import type { Combatants } from "../../types/Combatants"
+import dice from "../../game/dice/dice"
+import type { DamageResult } from "../../types/combatData"
 
 export default async function applyDamage(
   combatants: Combatants
