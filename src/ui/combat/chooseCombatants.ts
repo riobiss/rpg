@@ -3,6 +3,7 @@ import enemy from "../../entities/enemy"
 import rl from "../../utils/readline"
 import chalk from "chalk"
 import type { Character } from "../../types/Character"
+import gameState from "../../game/play/gameState"
 
 export default async function chooseCombatants(): Promise<{
   attacker: Character
@@ -40,5 +41,6 @@ export default async function chooseCombatants(): Promise<{
   console.log(
     `\nAlvo - ${nameTarget}\nVida - ${healthTarget}\nDano - ${damageTarget.rolls}d${damageTarget.sides}\nDefesa - ${defenseTarget}`
   )
+  gameState.push(attacker, target)
   return { attacker, target }
 }

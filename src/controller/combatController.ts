@@ -1,17 +1,16 @@
 import applyDamage from "../game/applyDamage"
-import chooseCombatants from "../ui/combat/chooseCombatants"
 import type { Combatants } from "../types/Combatants"
 import viewAttack from "../ui/combat/viewAttack"
-import selectWeapon from "../ui/combat/selectWeapon"
+import gameState from "../game/play/gameState"
 
-export default async function combatController(combatants: Combatants) {
-  const state = combatants
-  const figthers: Combatants = {
-    attacker: state.attacker,
-    target: state.target,
-  }
-  const attackResult = await applyDamage(figthers)
-  figthers.target = attackResult.target
+export default async function combatController() {
+  const state = gameState
+    const figthers: Combatants = {
+      attacker: state[0],
+      target: state[1],
+    }
+    const attackResult = await applyDamage(figthers)
+    state[1] = attackResult.target
 
-  await viewAttack(attackResult)
+    await viewAttack(attackResult)
 }

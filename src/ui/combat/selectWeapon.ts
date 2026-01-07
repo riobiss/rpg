@@ -1,14 +1,14 @@
 import combatController from "../../controller/combatController"
-import type { Combatants } from "../../types/Combatants"
+import gameState from "../../game/play/gameState"
 import rl from "../../utils/readline"
 import chooseCombatants from "./chooseCombatants"
 
 export default async function selectWeapon() {
-  const combatants: Combatants = await chooseCombatants()
-  const { attacker } = combatants
+  await chooseCombatants()
+  const state = gameState
   console.log(`\nCom qual arma vai atacar?`)
   console.log("\n1 - Mão")
-  attacker.backpack?.swords.forEach((swords, index) => {
+  state[0].backpack?.swords.forEach((swords, index) => {
     const damage = swords.damage.base.map((dmg) => {
       return ` ${dmg.rolls}d${dmg.sides} ${dmg.type}`
     })
@@ -30,10 +30,10 @@ export default async function selectWeapon() {
   while (true) {
     const answer = Number(await rl.question("> "))
     if (answer === 1) {
-      combatController(combatants)
+      combatController()
     }
-    if (answer === 2) {
+/*     if (answer === 2) {
       combatController(combatants) //tenho que passar a espada como parametro e fazer uma nova função
-    }
+    } */
   }
 }
