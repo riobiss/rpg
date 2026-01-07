@@ -6,16 +6,12 @@ import selectWeapon from "../ui/combat/selectWeapon"
 
 export default async function combatController(combatants: Combatants) {
   const state = combatants
-  while (true) {
-    const combatants: Combatants = {
-      attacker: state.attacker,
-      target: state.target,
-    }
-    const attackResult = await applyDamage(combatants)
-    combatants.target = attackResult.target
-
-    const continueAttack = await viewAttack(attackResult)
-
-    if (continueAttack !== 1) break
+  const figthers: Combatants = {
+    attacker: state.attacker,
+    target: state.target,
   }
+  const attackResult = await applyDamage(figthers)
+  figthers.target = attackResult.target
+
+  await viewAttack(attackResult)
 }

@@ -27,8 +27,13 @@ export default async function selectWeapon() {
       `
     )
   })
-  const answer = Number(await rl.question("> "))
-  if (answer === 1) {
-    combatController(combatants)
+  while (true) {
+    const answer = Number(await rl.question("> "))
+    if (answer === 1) {
+      combatController(combatants)
+    }
+    if (answer === 2) {
+      combatController(combatants) //tenho que passar a espada como parametro e fazer uma nova função
+    }
   }
 }
