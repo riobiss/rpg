@@ -4,5 +4,5 @@ export type DamageResult = {
   target: Character
   roll: number
   damage: number
-  rollAttack: number
+  diceRolls: number | number[]
 }
