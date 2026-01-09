@@ -1,28 +1,36 @@
 import rl from "../utils/readline"
 import confirmExit from "../utils/confirmExit"
 import createCharacter from "./createCharacter"
-import chalk from "chalk"
 import selectWeapon from "./combat/selectWeapon"
 
 export default async function menu() {
   process.stdout.write("\x1Bc")
-  console.log(`Boas vindas ao ${chalk.bold.blue(`Shell RPG`)}\n`)
-  console.log(`${chalk.yellow(1)} - Criar personagem`)
-  console.log(`${chalk.yellow(2)} - Auxilio de combate`)
-  console.log(`${chalk.yellow(3)} - Ver status`)
-  console.log(`${chalk.yellow(4)} - Sair`)
-  const answer = await rl.question("> ")
+  console.log(`Boas vindas ao ${`Shell RPG`}\n`)
+  console.log(`${1} - Criar personagem`)
+  console.log(`${2} - Auxilio de combate`)
+  console.log(`${3} - Ver status`)
+  console.log(`${4} - Sair`)
+  let inputMenu: number | undefined
 
-  if (answer === "1") {
+  while (inputMenu === undefined) {
+    const value = Number(await rl.question("> "))
+
+    if (Number.isNaN(value)) continue
+    if (value < 1 || value > 4) continue
+
+    inputMenu = value
+  }
+
+  if (inputMenu === 1) {
     await createCharacter()
   }
-  if (answer === "2") {
+  if (inputMenu === 2) {
     await selectWeapon()
   }
-  if (answer === "3") {
+  if (inputMenu === 3) {
     console.log("historia")
   }
-  if (answer === "4") {
+  if (inputMenu === 4) {
     const shouldExit = await confirmExit()
     if (shouldExit) {
       rl.close()

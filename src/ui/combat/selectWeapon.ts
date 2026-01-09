@@ -29,6 +29,8 @@ export default async function selectWeapon() {
   })
   while (true) {
     const answer = Number(await rl.question("> "))
+    if (Number.isNaN(answer)) continue
+
     combatController(answer)
   }
 }
