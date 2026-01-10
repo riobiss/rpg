@@ -1,5 +1,6 @@
 export default [
   {
+    id: 1,
     name: "Espada do Cavaleiro de Ferro",
     weaponType: "espada-longa",
     damage: {
@@ -18,6 +19,7 @@ export default [
     special: "bônus de +2 em ataques defensivos",
   },
   {
+    id: 2,
     name: "Espada do Cavaleiro da Aurora",
     weaponType: "espada-longa",
     damage: {
@@ -37,6 +39,7 @@ export default [
   },
 
   {
+    id: 3,
     name: "Espada do Cavaleiro Negro",
     weaponType: "espada-longa",
     damage: {
@@ -56,6 +59,7 @@ export default [
   },
 
   {
+    id: 4,
     name: "Espada do Cavaleiro Escarlate",
     weaponType: "espada-longa",
     damage: {
@@ -75,6 +79,7 @@ export default [
   },
 
   {
+    id: 5,
     name: "Espada do Cavaleiro Real",
     weaponType: "espada-longa",
     damage: {

@@ -9,7 +9,7 @@ export default [
     },
     defense: 10,
     backpack: {
-      swords: [swords[0]],
+      weapons: [swords[0]],
     },
   },
   {
@@ -21,7 +21,7 @@ export default [
     },
     defense: 3,
     backpack: {
-      swords: [swords[2], swords[3]],
+      weapons: [swords[2], swords[3]],
     },
   },
   {
@@ -33,7 +33,7 @@ export default [
     },
     defense: 7,
     backpack: {
-      swords: [swords[1]],
+      weapons: [swords[1]],
     },
   },
 ]

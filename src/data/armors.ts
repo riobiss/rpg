@@ -1,5 +1,6 @@
 export default [
   {
+    id: 1,
     name: "Armadura de Couro Reforçado",
     tipo: "Armadura leve",
     ca: 18,
@@ -20,6 +21,7 @@ export default [
     },
   },
   {
+    id: 2,
     name: "Cota de Malha do Soldado",
     tipo: "Armadura média",
     ca: 32,
@@ -40,6 +42,7 @@ export default [
     },
   },
   {
+    id: 3,
     name: "Armadura de Placas",
     tipo: "Armadura pesada",
     ca: 48,
@@ -60,6 +63,7 @@ export default [
     },
   },
   {
+    id: 4,
     name: "Armadura do Guardião Antigo",
     tipo: "Armadura pesada",
     ca: 55,
@@ -80,6 +84,7 @@ export default [
     },
   },
   {
+    id: 5,
     name: "Armadura do Caçador Sombrio",
     tipo: "Armadura média",
     ca: 40,
@@ -99,4 +104,4 @@ export default [
       maldicao: 6,
     },
   },
-];
+]

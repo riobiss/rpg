@@ -8,7 +8,7 @@ export default async function selectWeapon() {
   const state = gameState
   console.log(`\nCom qual arma vai atacar?`)
   console.log("\n1 - Mão")
-  state[0].backpack?.swords.forEach((swords, index) => {
+  state[0].backpack?.weapons?.forEach((swords, index) => {
     const damage = swords.damage.base.map((dmg) => {
       return ` ${dmg.rolls}d${dmg.sides} ${dmg.type}`
     })

@@ -11,7 +11,7 @@ export default async function chooseCombatants(): Promise<{
   console.clear()
   console.log("Combatentes")
   player.forEach((player, index) => {
-    console.log(`${(index + 1)} - ${player.name}`)
+    console.log(`${index + 1} - ${player.name}`)
   })
 
   let attacker: Character | undefined

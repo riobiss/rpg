@@ -15,7 +15,7 @@ export default async function combatController(weapon: number) {
 
     await viewAttack(attackResult)
   }
-  const sword = figthers.attacker.backpack?.swords[weapon - 2]
+  const sword = figthers.attacker.backpack?.weapons?.[weapon - 2]
   if (!sword) return
   const attackResult = await applyDamageWeapon(sword, figthers.target)
   gameState[1] = attackResult.target
