@@ -3,6 +3,8 @@ import swords from "../data/swords"
 
 export default [
   {
+    alive: true,
+    initiative: 5,
     name: "Goblin",
     damage: { rolls: 1, sides: 12 },
     health: 40,
@@ -13,6 +15,8 @@ export default [
     },
   },
   {
+    alive: true,
+    initiative: 1,
     name: "Ogro",
     damage: { rolls: 1, sides: 18 },
     health: 100,
@@ -23,6 +27,8 @@ export default [
     },
   },
   {
+    alive: false,
+    initiative: 0,
     name: "Golem",
     damage: { rolls: 1, sides: 14 },
     health: 80,

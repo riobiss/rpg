@@ -1,7 +1,7 @@
 import rl from "../utils/readline"
 import confirmExit from "../utils/confirmExit"
 import createCharacter from "./createCharacter"
-import selectWeapon from "./combat/selectWeapon"
+import StartCombat from "../game/play/startCombat"
 
 export default async function menu() {
   process.stdout.write("\x1Bc")
@@ -25,7 +25,8 @@ export default async function menu() {
     await createCharacter()
   }
   if (inputMenu === 2) {
-    await selectWeapon()
+    process.stdout.write("\x1Bc")
+    StartCombat()
   }
   if (inputMenu === 3) {
     console.log("historia")

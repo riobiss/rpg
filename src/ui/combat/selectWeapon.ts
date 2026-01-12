@@ -1,14 +1,14 @@
 import combatController from "../../controller/combatController"
-import gameState from "../../game/play/gameState"
+import type { Character } from "../../types/Character"
 import rl from "../../utils/readline"
-import chooseCombatants from "./chooseCombatants"
 
-export default async function selectWeapon() {
-  await chooseCombatants()
-  const state = gameState
-  console.log(`\nCom qual arma vai atacar?`)
+export default async function selectWeapon(
+  character: Character,
+  target: Character
+) {
+  console.log(`\nCom qual arma vai atacar o ${target.name}?`)
   console.log("\n1 - Mão")
-  state[0].backpack?.weapons?.forEach((swords, index) => {
+  character.backpack?.weapons?.forEach((swords, index) => {
     const damage = swords.damage.base.map((dmg) => {
       return ` ${dmg.rolls}d${dmg.sides} ${dmg.type}`
     })
@@ -27,10 +27,7 @@ export default async function selectWeapon() {
       `
     )
   })
-  while (true) {
-    const answer = Number(await rl.question("> "))
-    if (Number.isNaN(answer)) continue
 
-    combatController(answer)
-  }
+  const answer = Number(await rl.question("> "))
+  await combatController(character, target, answer)
 }

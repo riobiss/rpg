@@ -1,10 +1,12 @@
 import swords from "../data/swords"
 export default [
   {
+    alive: false,
+    initiative: 0,
     name: "Cristo",
     health: 70,
     damage: {
-      rolls: 2,
+      rolls: 4,
       sides: 12,
     },
     defense: 10,
@@ -13,6 +15,8 @@ export default [
     },
   },
   {
+    alive: false,
+    initiative: 0,
     name: "Jonas",
     health: 50,
     damage: {
@@ -25,6 +29,8 @@ export default [
     },
   },
   {
+    alive: true,
+    initiative: 4,
     name: "Jales",
     health: 60,
     damage: {
