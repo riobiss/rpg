@@ -3,6 +3,6 @@ import type { Character } from "./Character"
 export type DamageResult = {
   target: Character
   roll: number
-  damage: number
+  effectiveDamage: number
   diceRolls: number | number[]
 }

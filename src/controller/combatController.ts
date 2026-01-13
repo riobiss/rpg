@@ -12,14 +12,9 @@ export default async function combatController(
   const figthers: Combatants = { attacker: character, target }
 
   if (inputWeapon === 1) {
-    const attackResult = await applyDamage(figthers)
-    target = attackResult.target
-
-    await viewAttack(attackResult)
+    await applyDamage(figthers)
   }
   const sword = character.backpack?.weapons?.[inputWeapon - 2]
   if (!sword) return
-  const attackResult = await applyDamageWeapon(sword, figthers.target)
-  target = attackResult.target
-  await viewAttack(attackResult)
+  await applyDamageWeapon(sword, figthers.target)
 }

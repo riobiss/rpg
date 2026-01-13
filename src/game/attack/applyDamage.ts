@@ -1,8 +1,11 @@
 import type { Combatants } from "../../types/Combatants"
 import dice from "../../game/dice/dice"
 import type { DamageResult } from "../../types/combatData"
+import viewAttack from "../../ui/combat/viewAttack"
 
-export default async function applyDamage(combatants: Combatants): Promise<DamageResult> {
+export default async function applyDamage(
+  combatants: Combatants
+): Promise<DamageResult> {
   const roll = dice({ rolls: 1, sides: 20 })
 
   const { attacker, target } = combatants
@@ -13,7 +16,7 @@ export default async function applyDamage(combatants: Combatants): Promise<Damag
     return {
       target,
       roll,
-      damage: 0,
+      effectiveDamage: 0,
       diceRolls,
     }
   }
@@ -21,18 +24,18 @@ export default async function applyDamage(combatants: Combatants): Promise<Damag
   if (roll === 20) {
     diceRolls *= 2
   }
-
+  if (target.health <= 0) {
+    target.alive = false
+  }
   const effectiveDamage = Math.max(diceRolls - target.defense, 0)
 
-  const newHealth = target.health - effectiveDamage
+  target.health -= effectiveDamage
+  await viewAttack(target, roll, effectiveDamage, diceRolls)
 
   return {
-    target: {
-      ...target,
-      health: newHealth,
-    },
+    target,
     roll,
-    damage: effectiveDamage,
+    effectiveDamage,
     diceRolls,
   }
 }

@@ -1,8 +1,12 @@
 import type { Character } from "../../types/Character"
 import type { Swords } from "../../types/Swords"
+import viewAttack from "../../ui/combat/viewAttack"
 import dice from "../dice/dice"
 
-export default async function applyDamageWeapon(weapon: Swords, target: Character) {
+export default async function applyDamageWeapon(
+  weapon: Swords,
+  target: Character
+) {
   const dicesWeapon = weapon.damage.base
 
   const diceRolls: number[] = []
@@ -31,15 +35,13 @@ export default async function applyDamageWeapon(weapon: Swords, target: Characte
 
   const effectiveDamage = Math.max(WeaponDamage - target.defense, 0)
 
-  const newHealth = target.health - effectiveDamage
+  target.health -= effectiveDamage
+  await viewAttack(target, roll, effectiveDamage, diceRolls)
 
   return {
-    target: {
-      ...target,
-      health: newHealth,
-    },
+    target,
     roll,
     diceRolls,
-    damage: effectiveDamage,
+    effectiveDamage,
   }
 }
