@@ -8,5 +8,12 @@ export default async function runTurn(turnQueue: Turn[]) {
   const character = turn.entity
 
   if (!character) return
+
+  if (character.health <= 0) {
+    character.alive = false
+    return
+  }
   await playTurn(character)
+
+  turnQueue.push(turn)
 }

@@ -24,9 +24,7 @@ export default async function applyDamage(
   if (roll === 20) {
     diceRolls *= 2
   }
-  if (target.health <= 0) {
-    target.alive = false
-  }
+
   const effectiveDamage = Math.max(diceRolls - target.defense, 0)
 
   target.health -= effectiveDamage

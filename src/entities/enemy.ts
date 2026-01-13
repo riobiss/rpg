@@ -7,7 +7,7 @@ export default [
     initiative: 5,
     name: "Goblin",
     damage: { rolls: 1, sides: 12 },
-    health: 40,
+    health: 10,
     defense: 4,
     backpack: {
       weapons: [swords[0]],
@@ -27,7 +27,7 @@ export default [
     },
   },
   {
-    alive: false,
+    alive: true,
     initiative: 0,
     name: "Golem",
     damage: { rolls: 1, sides: 14 },

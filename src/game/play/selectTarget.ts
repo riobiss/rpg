@@ -16,11 +16,12 @@ export default async function selectTarget(character: Character) {
       aliveEntity.push(p)
     }
   })
+  aliveEntity.sort((a, b) => b.initiative - a.initiative)
 
   aliveEntity.forEach((e, i) => {
     console.log(`${i + 1} - ${e.name} (${e.health} HP) (${e.defense} DEF)`)
   })
-  const input = Number(await rl.question(`${character.name}, Qual seu alvo? `))
+  const input = Number(await rl.question(`\n${character.name}, Qual seu alvo? `))
   const target = aliveEntity[input - 1]
   return target
 }

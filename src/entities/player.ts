@@ -1,7 +1,7 @@
 import swords from "../data/swords"
 export default [
   {
-    alive: false,
+    alive: true,
     initiative: 0,
     name: "Cristo",
     health: 70,
@@ -15,7 +15,7 @@ export default [
     },
   },
   {
-    alive: false,
+    alive: true,
     initiative: 0,
     name: "Jonas",
     health: 50,

@@ -15,6 +15,5 @@ export default function initTurnQueue() {
     }
   }
   turnQueue.sort((a, b) => b.entity.initiative - a.entity.initiative)
-
   return turnQueue
 }
