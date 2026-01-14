@@ -14,6 +14,6 @@ export default async function runTurn(turnQueue: Turn[]) {
     return
   }
   await playTurn(character)
-
+  
   turnQueue.push(turn)
 }
